@@ -2,9 +2,9 @@
 
 Software Engineer @ Snowflake · previously @ Uber and @ Oracle.
 
-🔭 Interested in **LLM inference frameworks** (vLLM, SGLang) and **OpenTelemetry GenAI instrumentation**.
+🔭 Interested in **LLM inference frameworks** and **OpenTelemetry GenAI instrumentation**.
 
-🎓 MSCS @ Yale · BEng in Software Engineering @ UESTC
+🎓 MS in Computer Science @ Yale · BEng in Software Engineering @ UESTC
 
 🔗 [LinkedIn](https://www.linkedin.com/in/zening99/) · Work account [@sfc-gh-zeningchen](https://github.com/sfc-gh-zeningchen)
 
