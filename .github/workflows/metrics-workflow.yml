@@ -1,0 +1,45 @@
+name: Metrics
+on:
+  # 每天 UTC 0 点刷新
+  schedule: [{ cron: "0 0 * * *" }]
+  # 允许在 Actions 页手动触发
+  workflow_dispatch:
+  # push 到 main 时也刷新
+  push: { branches: ["main"] }
+
+jobs:
+  github-metrics:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: zeningc
+          filename: github-metrics.svg
+          template: classic
+          config_timezone: Asia/Shanghai
+
+          # 基础板块:头部、近期活动、社区数据、仓库统计
+          base: header, activity, community, repositories, metadata
+
+          # 语言占比
+          plugin_languages: yes
+          plugin_languages_details: bytes-size, percentage
+
+          # 贡献热力图(3D isocalendar,过去一年)
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: full-year
+
+          # 编码习惯:最活跃时段 / 早鸟还是夜猫子
+          plugin_habits: yes
+          plugin_habits_from: 200
+          plugin_habits_charts: yes
+
+          # 我贡献过的开源项目/组织(notable contributions)
+          # from: organization -> 只统计组织下的贡献,排除个人账号的(私有)仓库
+          plugin_notable: yes
+          plugin_notable_from: organization
+          plugin_notable_repositories: yes
+          plugin_notable_types: commit, pull_request
