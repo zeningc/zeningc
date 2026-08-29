@@ -33,9 +33,9 @@ jobs:
           plugin_isocalendar_duration: full-year
 
           # 编码习惯:最活跃时段 / 早鸟还是夜猫子
-          plugin_habits: yes
-          plugin_habits_from: 200
-          plugin_habits_charts: yes
+          # 关闭:上游 habits 插件存在 bug,解析某条 commit 时崩溃
+          # (TypeError: Cannot destructure 'author'),换 token / 缩小取样均无效。
+          plugin_habits: no
 
           # 我贡献过的开源项目/组织(notable contributions)
           # from: organization -> 只统计组织下的贡献,排除个人账号的(私有)仓库
