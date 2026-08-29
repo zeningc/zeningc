@@ -34,7 +34,8 @@ jobs:
 
           # 编码习惯:最活跃时段 / 早鸟还是夜猫子
           plugin_habits: yes
-          plugin_habits_from: 200
+          plugin_habits_from: 100
+          plugin_habits_days: 7
           plugin_habits_charts: yes
 
           # 我贡献过的开源项目/组织(notable contributions)
